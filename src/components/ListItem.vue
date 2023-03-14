@@ -1,14 +1,13 @@
 <template>
   <div
     class="listItem  "
-    :class="{isComplete}"
-    v-on:click="isComplete=!isComplete"
+    v-on:click="$event.target.classList.toggle('isComplete')"
     :key="task.id"
-    v-for="task, in list"
+    v-for="task in list"
   >
-  <!-- <div class="taskRow"> -->
-    <h2 ><span v-if="!isComplete">&ensp;</span><span v-if="isComplete">&#x2713;</span>{{ task.item }}</h2>
-  <!-- </div> -->
+
+    <h2><span v-if="!isComplete">&ensp;</span><span v-if="isComplete">&#x2713;</span>{{ task.item }}</h2>
+
   </div>
 </template>
 
